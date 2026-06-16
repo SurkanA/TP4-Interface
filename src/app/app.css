@@ -1,0 +1,121 @@
+/* CSS Y DISEÑO HECHO CON IA*/
+/* Custom form styling and micro-animations */
+
+.floating-input,
+.floating-textarea {
+  width: 100%;
+  background-color: oklch(0.187 0.024 261.27); /* slate-900 */
+  border: 1px solid rgba(51, 65, 85, 0.8); /* slate-700/80 */
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: oklch(0.967 0.007 247.9); /* slate-100 */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-input {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+  height: 3.75rem;
+}
+
+.floating-textarea {
+  padding-top: 1.75rem;
+  padding-bottom: 0.75rem;
+  min-height: 8rem;
+}
+
+.floating-label {
+  position: absolute;
+  left: 1rem;
+  top: 1.1rem;
+  color: oklch(0.551 0.027 264.38); /* slate-500 */
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left top;
+}
+
+/* Floating labels transition behavior */
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-0.75rem) scale(0.78);
+  color: oklch(0.723 0.219 149.579); /* emerald-400 */
+  font-weight: 600;
+}
+
+.floating-textarea:focus ~ .floating-label,
+.floating-textarea:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-0.8rem) scale(0.78);
+  color: oklch(0.723 0.219 149.579); /* emerald-400 */
+  font-weight: 600;
+}
+
+/* Focus and border glow animations */
+.floating-input:focus,
+.floating-textarea:focus {
+  border-color: oklch(0.627 0.194 149.214); /* emerald-500 */
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+/* Error validation states */
+.input-error {
+  border-color: oklch(0.609 0.203 18.72) !important; /* rose-500 */
+}
+.input-error:focus {
+  box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.15) !important;
+}
+.input-error ~ .floating-label {
+  color: oklch(0.609 0.203 18.72) !important;
+}
+
+/* Valid validation states */
+.input-valid {
+  border-color: oklch(0.627 0.194 149.214) !important; /* emerald-500 */
+}
+
+/* Error helper messages animation */
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast container animations */
+.toast {
+  transform: translateY(1.5rem) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast-hide {
+  transform: translateY(1.5rem) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Accessibility: High contrast keyboard focus styles */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid oklch(0.723 0.219 149.579) !important; /* emerald-400 */
+  outline-offset: 2px !important;
+}
