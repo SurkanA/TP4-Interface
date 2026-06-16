@@ -1,59 +1,52 @@
-# TP4Interface
+# TP4-Interface
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+Hecho con Vite, Angular 22, Tailwind CSS y Typescript. El formulario esta hecho con la API de Angular usando Reactive-Forms.
+Incluye Test Unitarios que checkean que el formulario siempre funcione correctamente (leer codigo) y una API usando [MockAPI](https://6a31b5207bc5e1c612661991.mockapi.io/api/forms).
 
-## Development server
+---
 
-To start a local development server, run:
+## 🛠️ Tecnologías Utilizadas
 
-```bash
-ng serve
+- **Framework:** [Angular](https://angular.dev/)
+- **Gestor de Paquetes:** [PNPM](https://pnpm.io/)
+- **Herramienta de Construcción:** [Vite](https://vitejs.dev/)
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **API:** [MockAPI](https://mockapi.io/)
+
+---
+
+### 📋 Detalle de los Endpoints
+
+#### 1. Obtener todos los registros
+
+- **Método:** `GET`
+- **URL:** `https://6a31b5207bc5e1c612661991.mockapi.io/api/forms`
+- **Descripción:** Recupera la lista completa de formularios enviados.
+
+#### 2. Obtener un registro por ID
+
+- **Método:** `GET`
+- **URL:** `https://6a31b5207bc5e1c612661991.mockapi.io/api/forms/{id}`
+- **Descripción:** Recupera los detalles de un formulario específico utilizando su identificador único.
+
+#### 3. Enviar un nuevo formulario
+
+- **Método:** `POST`
+- **URL:** `https://6a31b5207bc5e1c612661991.mockapi.io/api/forms`
+- **Headers Requeridos:** `Content-Type: application/json`
+- **Descripción:** Guarda los datos de un nuevo formulario en el servidor.
+
+---
+
+### 📝 Estructura del Payload (Request Body)
+
+```json
+{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+  "telephone": "2494583904",
+  "topic": "general",
+  "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+}
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
