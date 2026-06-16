@@ -6,6 +6,9 @@
     "outDir": "./out-tsc/app",
     "types": []
   },
+  "angularCompilerOptions": {
+    "strictStandalone": true
+  },
   "include": [
     "src/**/*.ts"
   ],
